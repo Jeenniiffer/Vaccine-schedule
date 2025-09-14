@@ -134,20 +134,28 @@ li {
 
 /* 手機響應式 (iPhone 12 Pro Max 約 428px 寬) */
 @media screen and (max-width: 480px) {
+  body {
+    font-size: 16px; /* 全局文字大小 */
+  }
+
   .container {
-    margin: 15px; /* 減少外邊距 */
-    padding: 20px; /* 容器內邊距稍大，保持舒適 */
-    width: calc(100% - 30px); /* 避免左右過於貼邊 */
+    margin: 15px auto;
+    padding: 20px;
+    width: 95%;
+    max-width: 480px;
   }
 
   h1 {
-    font-size: 48px; /* 標題放大 */
+    font-size: 32px;
     line-height: 1.2;
+    margin-bottom: 20px;
   }
 
   h2, h3 {
-    font-size: 40px; /* 次標題放大 */
-    line-height: 1.2;
+    font-size: 22px;
+    line-height: 1.3;
+    margin-top: 20px;
+    margin-bottom: 12px;
   }
 
   .input-group {
@@ -156,24 +164,46 @@ li {
 
   input {
     width: 100%;
-    padding: 20px; /* 放大輸入框高度 */
-    font-size: 2em; /* 放大文字 */
+    padding: 14px 16px;
+    font-size: 18px; /* >=16px 防止自動放大 */
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  input:focus {
+    border-color: #557174;
+    box-shadow: 0 0 5px rgba(85, 113, 116, 0.3);
   }
 
   button {
     width: 100%;
-    padding: 20px;
+    padding: 14px 16px;
+    font-size: 18px;
+    border-radius: 12px;
     margin-top: 12px;
-    font-size: 2em; /* 放大按鈕文字 */
+    background-color: #b5c7d3;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #9fb4c0;
   }
 
   #result {
-    padding: 25px;
-    font-size: 2em; /* 放大結果文字 */
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 20px;
   }
 
   .vaccine-card {
-    padding: 16px 20px; /* 卡片內邊距稍小，避免過寬 */
-    font-size: 2em; /* 卡片文字放大 */
+    padding: 12px 16px;
+    font-size: 18px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   }
 }
