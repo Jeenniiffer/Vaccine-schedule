@@ -1,0 +1,57 @@
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  background-color: #f8f7f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #5c5c5c;
+}
+
+input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button {
+  padding: 10px 16px;
+  margin-left: 8px;
+  background-color: #b5c7d3;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #9fb4c0;
+}
+
+#result {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f2f2f2;
+  border-radius: 8px;
+}
+
+.public {
+  color: #557174; /* 莫蘭迪綠 */
+}
+
+.private {
+  color: #b77b82; /* 莫蘭迪粉紅 */
+}
