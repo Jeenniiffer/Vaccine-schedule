@@ -73,17 +73,9 @@ function checkVaccines() {
   });
 
   function renderList(vaccines) {
-    return vaccines.map(v => `<div class="vaccine-card ${v.type === 'public' ? 'public' : 'private'}">
+    return vaccines.map(v => `<div class="vaccine-card ${v.type === '公費' ? 'public' : 'private'}">
       ${v.name} 第${v.dose}劑 (${v.type})
     </div>`).join("");
   }
 
-  let resultHTML = `<h3>過去已接種疫苗</h3>${renderList(pastVaccines)}`;
-  if (currentVaccines.length > 0) {
-    resultHTML += `<h3>本月應接種疫苗</h3>${renderList(currentVaccines)}`;
-  } else {
-    resultHTML += `<p>本月無預定疫苗接種</p>`;
-  }
-
-  document.getElementById("result").innerHTML = resultHTML;
-}
+  let resultHTML = `<h3>過去已接種疫苗</h3
