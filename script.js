@@ -1,88 +1,128 @@
-// 完整台灣幼兒疫苗時程表
-const schedule = [
-  { age: 0, vaccines: [{name:"B型肝炎疫苗", dose:1, type:"public"}, {name:"卡介苗", dose:1, type:"public"}] },
-  { age: 1, vaccines: [{name:"B型肝炎疫苗", dose:2, type:"public"}] },
-  { age: 2, vaccines: [
-      {name:"五合一（白喉、破傷風、百日咳、小兒麻痺、b型嗜血桿菌）", dose:1, type:"public"},
-      {name:"13價肺炎鏈球菌疫苗 (PCV13)", dose:1, type:"public"},
-      {name:"口服輪狀病毒疫苗", dose:1, type:"private"}
-  ] },
-  { age: 4, vaccines: [
-      {name:"五合一", dose:2, type:"public"},
-      {name:"13價肺炎鏈球菌", dose:2, type:"public"},
-      {name:"口服輪狀病毒疫苗", dose:2, type:"private"}
-  ] },
-  { age: 5, vaccines: [{name:"五合一", dose:3, type:"public"}] },
-  { age: 6, vaccines: [
-      {name:"B型肝炎疫苗", dose:3, type:"public"},
-      {name:"流感疫苗（首次需2劑）", dose:1, type:"public/private"}
-  ] },
-  { age: 12, vaccines: [
-      {name:"MMR（麻疹、腮腺炎、德國麻疹混合疫苗）", dose:1, type:"public"},
-      {name:"水痘疫苗", dose:1, type:"public"},
-      {name:"13價肺炎鏈球菌", dose:3, type:"public"}
-  ] },
-  { age: 15, vaccines: [{name:"日本腦炎活性減毒疫苗", dose:1, type:"public"}] },
-  { age: 18, vaccines: [
-      {name:"A型肝炎疫苗", dose:1, type:"private"},
-      {name:"五合一", dose:4, type:"public"}
-  ] },
-  { age: 27, vaccines: [
-      {name:"A型肝炎疫苗", dose:2, type:"private"},
-      {name:"日本腦炎疫苗", dose:2, type:"public"}
-  ] },
-  { age: 60, vaccines: [
-      {name:"DTaP-IPV（白喉、破傷風、百日咳、小兒麻痺）加強劑", dose:1, type:"public"}
-  ] },
-  { age: 72, vaccines: [
-      {name:"MMR 第2劑", dose:2, type:"public"}
-  ] },
-  { age: 144, vaccines: [
-      {name:"HPV（人類乳突病毒疫苗）", dose:1, type:"private"}
-  ] }
-];
-
-// 將輸入年齡轉換為總月齡
-function parseAge(input) {
-  input = input.toLowerCase().trim();
-  if (input.includes('y')) {
-    let parts = input.split('y');
-    let years = parseInt(parts[0]);
-    let months = parts[1] ? parseInt(parts[1].replace('m','')) : 0;
-    return years*12 + months;
-  }
-  return parseInt(input);
+/* 全局設定 */
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  background-color: #f8f7f4;
+  margin: 0;
+  padding: 0;
 }
 
-function checkVaccines() {
-  const ageInput = document.getElementById("ageInput").value;
-  const ageMonths = parseAge(ageInput);
+/* 容器 */
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
 
-  if (isNaN(ageMonths)) {
-    document.getElementById("result").innerHTML = "<p>請輸入正確數字或格式</p>";
-    return;
-  }
+/* 標題 */
+h1 {
+  font-size: 28px;
+  color: #5c5c5c;
+  margin-bottom: 20px;
+}
 
-  let pastVaccines = [];
-  let currentVaccines = [];
+h2, h3 {
+  font-size: 22px;
+  color: #5c5c5c;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 4px;
+}
 
-  schedule.forEach(s => {
-    if (s.age <= ageMonths) pastVaccines = pastVaccines.concat(s.vaccines);
-    if (s.age === ageMonths) currentVaccines = currentVaccines.concat(s.vaccines);
-  });
+/* 輸入區塊 */
+.input-group {
+  text-align: center;
+  margin-top: 20px;
+}
 
-  function renderList(vaccines) {
-    return vaccines.map(v => `<li class="${v.type === 'public' ? 'public' : 'private'}">
-      ${v.name} 第${v.dose}劑 (${v.type})
-    </li>`).join("");
-  }
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #5c5c5c;
+  font-weight: 500;
+  text-align: center;
+}
 
-  let resultHTML = `<h3>過去已接種疫苗</h3><ul>${renderList(pastVaccines)}</ul>`;
-  if (currentVaccines.length > 0) {
-    resultHTML += `<h3>本月應接種疫苗</h3><ul>${renderList(currentVaccines)}</ul>`;
-  } else {
-    resultHTML += `<p>本月無預定疫苗接種</p>`;
-  }
+input {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.2s;
+  display: block;
+  margin: 0 auto 10px auto;
+  text-align: center;
+  box-sizing: border-box;
+}
 
-  document.getElementById("result").innerHTML = resultHTML;
+input::placeholder {
+  text-align: center;
+}
+
+input:focus {
+  border-color: #557174;
+  box-shadow: 0 0 5px rgba(85, 113, 116, 0.3);
+}
+
+button {
+  padding: 10px 16px;
+  margin: 10px auto;
+  background-color: #b5c7d3;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  display: block;
+}
+
+button:hover {
+  background-color: #9fb4c0;
+}
+
+/* 結果區塊 */
+#result {
+  margin-top: 20px;
+  padding: 20px;
+  background: #f2f2f2;
+  border-radius: 12px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+/* 結果列表 */
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 8px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* 公費 / 自費標示 */
+.public {
+  color: #557174;
+  font-weight: 500;
+}
+
+.private {
+  color: #b77b82;
+  font-weight: 500;
+}
+
+/* 小卡片效果 */
+.vaccine-card {
+  background: #ffffff;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
