@@ -1,4 +1,3 @@
-// 台灣幼兒疫苗時程表（以月齡為單位）
 const schedule = [
   { age: 0, vaccines: [{name:"B型肝炎疫苗", dose:1, type:"公費"}, {name:"卡介苗", dose:1, type:"公費"}] },
   { age: 1, vaccines: [{name:"B型肝炎疫苗", dose:2, type:"公費"}] },
@@ -42,7 +41,6 @@ const schedule = [
   ] }
 ];
 
-// 將輸入年齡轉換為總月齡
 function parseAge(input) {
   input = input.toLowerCase().trim();
   if (input.includes('y')) {
@@ -54,7 +52,6 @@ function parseAge(input) {
   return parseInt(input);
 }
 
-// 查詢疫苗
 function checkVaccines() {
   const ageInput = document.getElementById("ageInput").value;
   const ageMonths = parseAge(ageInput);
