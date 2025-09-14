@@ -1,6 +1,13 @@
 /* 全局設定 */
+.dela-gothic-one-regular {
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* 全局套用 */
 body {
-  font-family: "Noto Sans TC", sans-serif;
+  font-family: "Dela Gothic One", sans-serif; /* 改為新字體 */
   background-color: #f8f7f4;
   margin: 0;
   padding: 0;
