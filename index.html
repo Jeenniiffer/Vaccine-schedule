@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>疫苗時程查詢</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>台灣幼兒疫苗查詢</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>💉 疫苗時程查詢</h1>
-    <input type="text" id="ageInput" placeholder="輸入年齡，例如：6個月、1歲、國小一年級">
-    <button onclick="checkVaccines()">查詢</button>
-    <div id="result"></div>
-  </div>
-  <script src="script.js"></script>
+
+<h2>幼兒疫苗查詢</h2>
+<label for="ageInput">請輸入年齡（歲或月，例如 0, 1, 12, 24，或 1y2m）:</label>
+<input type="text" id="ageInput" placeholder="例如 1y2m 或 14">
+<button onclick="checkVaccines()">查詢</button>
+
+<div id="result" class="result"></div>
+
+<script src="script.js"></script>
 </body>
 </html>
