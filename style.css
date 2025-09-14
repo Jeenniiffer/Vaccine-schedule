@@ -140,29 +140,33 @@ li {
   }
 
   h1 {
-    font-size: 24px;
+    font-size: 48px; /* 原24px -> 48px */
   }
 
   h2, h3 {
-    font-size: 20px;
+    font-size: 40px; /* 原20px -> 40px */
   }
 
   input {
     width: 100%;
-    padding: 12px;
+    padding: 24px; /* 放大輸入框內文字 */
+    font-size: 2em; /* 輸入文字放大 */
   }
 
   button {
     width: 100%;
-    padding: 12px;
+    padding: 24px;
     margin-top: 10px;
+    font-size: 2em; /* 按鈕文字放大 */
   }
 
   #result {
-    padding: 15px;
+    padding: 30px;
+    font-size: 2em; /* 結果文字放大 */
   }
 
   .vaccine-card {
-    padding: 8px 12px;
+    padding: 16px 24px;
+    font-size: 2em; /* 卡片文字放大 */
   }
 }
