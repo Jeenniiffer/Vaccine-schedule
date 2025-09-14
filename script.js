@@ -1,44 +1,44 @@
 // 台灣幼兒疫苗時程表（以月齡為單位）
 const schedule = [
-  { age: 0, vaccines: [{name:"B型肝炎疫苗", dose:1, type:"public"}, {name:"卡介苗", dose:1, type:"public"}] },
-  { age: 1, vaccines: [{name:"B型肝炎疫苗", dose:2, type:"public"}] },
+  { age: 0, vaccines: [{name:"B型肝炎疫苗", dose:1, type:"公費"}, {name:"卡介苗", dose:1, type:"公費"}] },
+  { age: 1, vaccines: [{name:"B型肝炎疫苗", dose:2, type:"公費"}] },
   { age: 2, vaccines: [
-      {name:"五合一（白喉、破傷風、百日咳、小兒麻痺、b型嗜血桿菌）", dose:1, type:"public"},
-      {name:"13價肺炎鏈球菌疫苗 (PCV13)", dose:1, type:"public"},
-      {name:"口服輪狀病毒疫苗", dose:1, type:"private"}
+      {name:"五合一（白喉、破傷風、百日咳、小兒麻痺、b型嗜血桿菌）", dose:1, type:"公費"},
+      {name:"13價肺炎鏈球菌疫苗 (PCV13)", dose:1, type:"公費"},
+      {name:"口服輪狀病毒疫苗", dose:1, type:"自費"}
   ] },
   { age: 4, vaccines: [
-      {name:"五合一", dose:2, type:"public"},
-      {name:"13價肺炎鏈球菌", dose:2, type:"public"},
-      {name:"口服輪狀病毒疫苗", dose:2, type:"private"}
+      {name:"五合一", dose:2, type:"公費"},
+      {name:"13價肺炎鏈球菌", dose:2, type:"公費"},
+      {name:"口服輪狀病毒疫苗", dose:2, type:"自費"}
   ] },
-  { age: 5, vaccines: [{name:"五合一", dose:3, type:"public"}] },
+  { age: 5, vaccines: [{name:"五合一", dose:3, type:"公費"}] },
   { age: 6, vaccines: [
-      {name:"B型肝炎疫苗", dose:3, type:"public"},
-      {name:"流感疫苗（首次需2劑）", dose:1, type:"public/private"}
+      {name:"B型肝炎疫苗", dose:3, type:"公費"},
+      {name:"流感疫苗（首次需2劑）", dose:1, type:"公費/自費"}
   ] },
   { age: 12, vaccines: [
-      {name:"MMR（麻疹、腮腺炎、德國麻疹混合疫苗）", dose:1, type:"public"},
-      {name:"水痘疫苗", dose:1, type:"public"},
-      {name:"13價肺炎鏈球菌", dose:3, type:"public"}
+      {name:"MMR（麻疹、腮腺炎、德國麻疹混合疫苗）", dose:1, type:"公費"},
+      {name:"水痘疫苗", dose:1, type:"公費"},
+      {name:"13價肺炎鏈球菌", dose:3, type:"公費"}
   ] },
-  { age: 15, vaccines: [{name:"日本腦炎活性減毒疫苗", dose:1, type:"public"}] },
+  { age: 15, vaccines: [{name:"日本腦炎活性減毒疫苗", dose:1, type:"公費"}] },
   { age: 18, vaccines: [
-      {name:"A型肝炎疫苗", dose:1, type:"private"},
-      {name:"五合一", dose:4, type:"public"}
+      {name:"A型肝炎疫苗", dose:1, type:"自費"},
+      {name:"五合一", dose:4, type:"公費"}
   ] },
   { age: 27, vaccines: [
-      {name:"A型肝炎疫苗", dose:2, type:"private"},
-      {name:"日本腦炎疫苗", dose:2, type:"public"}
+      {name:"A型肝炎疫苗", dose:2, type:"自費"},
+      {name:"日本腦炎疫苗", dose:2, type:"公費"}
   ] },
   { age: 60, vaccines: [
-      {name:"DTaP-IPV（白喉、破傷風、百日咳、小兒麻痺）加強劑", dose:1, type:"public"}
+      {name:"DTaP-IPV（白喉、破傷風、百日咳、小兒麻痺）加強劑", dose:1, type:"公費"}
   ] },
   { age: 72, vaccines: [
-      {name:"MMR 第2劑", dose:2, type:"public"}
+      {name:"MMR 第2劑", dose:2, type:"公費"}
   ] },
   { age: 144, vaccines: [
-      {name:"HPV（人類乳突病毒疫苗）", dose:1, type:"private"}
+      {name:"HPV（人類乳突病毒疫苗）", dose:1, type:"自費"}
   ] }
 ];
 
