@@ -78,4 +78,12 @@ function checkVaccines() {
     </div>`).join("");
   }
 
-  let resultHTML = `<h3>過去已接種疫苗</h3
+  let resultHTML = `<h3 class="yuji-mai-regular">過去已接種疫苗</h3>${renderList(pastVaccines)}`;
+  if (currentVaccines.length > 0) {
+    resultHTML += `<h3 class="yuji-mai-regular">本月應接種疫苗</h3>${renderList(currentVaccines)}`;
+  } else {
+    resultHTML += `<p>本月無預定疫苗接種</p>`;
+  }
+
+  document.getElementById("result").innerHTML = resultHTML;
+}
