@@ -1,30 +1,16 @@
-/* 全局字體（非標題） */
+/* 標題字體 */
+.yuji-mai-regular {
+  font-family: "Yuji Mai", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* 全局文字 */
 body {
   font-family: "Noto Sans TC", sans-serif;
   background-color: #f8f7f4;
   margin: 0;
   padding: 0;
-}
-
-/* 標題字體 */
-h1, h2, h3 {
-  font-family: "Dela Gothic One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  color: #5c5c5c;
-}
-
-h1 {
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-h2, h3 {
-  font-size: 22px;
-  margin-top: 25px;
-  margin-bottom: 15px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 4px;
 }
 
 /* 容器 */
@@ -36,6 +22,20 @@ h2, h3 {
   border-radius: 30px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   text-align: center;
+}
+
+/* 標題 */
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+h2, h3 {
+  font-size: 22px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 4px;
 }
 
 /* 輸入區塊 */
