@@ -78,9 +78,9 @@ function checkVaccines() {
     </div>`).join("");
   }
 
-  let resultHTML = `<h3 class="yuji-mai-regular">過去已接種疫苗</h3>${renderList(pastVaccines)}`;
+  let resultHTML = `<h3 class="lxgw-wenkai-mono-tc-regular">過去已接種疫苗</h3>${renderList(pastVaccines)}`;
   if (currentVaccines.length > 0) {
-    resultHTML += `<h3 class="yuji-mai-regular">本月應接種疫苗</h3>${renderList(currentVaccines)}`;
+    resultHTML += `<h3 class="lxgw-wenkai-mono-tc-regular">本月應接種疫苗</h3>${renderList(currentVaccines)}`;
   } else {
     resultHTML += `<p>本月無預定疫苗接種</p>`;
   }
