@@ -132,10 +132,10 @@ li {
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-/* 手機響應式 (iPhone 12 Pro Max 約 428px 寬) */
+/* 手機響應式 */
 @media screen and (max-width: 480px) {
   body {
-    font-size: 16px; /* 全局文字大小 */
+    font-size: 16px;
   }
 
   .container {
@@ -158,23 +158,11 @@ li {
     margin-bottom: 12px;
   }
 
-  .input-group {
-    margin-top: 20px;
-  }
-
   input {
     width: 100%;
     padding: 14px 16px;
     font-size: 18px; /* >=16px 防止自動放大 */
     border-radius: 12px;
-    border: 1px solid #ccc;
-    text-align: center;
-    box-sizing: border-box;
-  }
-
-  input:focus {
-    border-color: #557174;
-    box-shadow: 0 0 5px rgba(85, 113, 116, 0.3);
   }
 
   button {
@@ -183,14 +171,6 @@ li {
     font-size: 18px;
     border-radius: 12px;
     margin-top: 12px;
-    background-color: #b5c7d3;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-  button:hover {
-    background-color: #9fb4c0;
   }
 
   #result {
@@ -204,6 +184,5 @@ li {
     font-size: 18px;
     border-radius: 16px;
     margin-bottom: 12px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   }
 }
